@@ -1,0 +1,6 @@
+framework module Pods_OneGroup {
+  umbrella header "Pods-OneGroup-umbrella.h"
+
+  export *
+  module * { export * }
+}

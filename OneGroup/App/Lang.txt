@@ -1,0 +1,13 @@
+yes=Si
+no=No
+cancel=Annulla
+
+user=Username
+pass=Password
+signIn=Login
+signUp=Iscriviti
+passForg=Problemi di accesso?
+memoCred=Memorizza le credenziali
+
+menu=Menu
+home=Home
