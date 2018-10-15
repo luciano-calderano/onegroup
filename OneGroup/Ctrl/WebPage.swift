@@ -17,6 +17,7 @@ class WebPage: MyViewController {
     }
     
     var page = ""
+    var isLogup = false
     
     @IBOutlet private var container: UIView!
     
@@ -32,6 +33,12 @@ class WebPage: MyViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if page.isEmpty {
+            return
+        }
+        if isLogup {
+            self.wheel.start()
+            let request = URLRequest(url: URL(string: self.page)!)
+            self.webView.load(request)
             return
         }
         User.shared.login { (response) in

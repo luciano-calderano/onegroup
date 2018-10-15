@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5aH-EB-Glh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5aH-EB-Glh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="PBJ-dq-4sk">
-                                <rect key="frame" x="107" y="120" width="160" height="40"/>
+                                <rect key="frame" x="107.5" y="120" width="160" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="jZP-MI-dog"/>
                                     <constraint firstAttribute="height" constant="40" id="zP2-ly-YK0"/>
@@ -110,7 +109,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr8-Ac-C0C">
-                                <rect key="frame" x="16" y="422" width="343" height="50"/>
+                                <rect key="frame" x="16" y="422.5" width="343" height="50"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Yom-EP-Eyw"/>
@@ -124,13 +123,27 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8W-hz-1BP">
-                                <rect key="frame" x="12" y="358" width="24" height="24"/>
+                                <rect key="frame" x="12" y="358.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="082-oR-s4h"/>
                                     <constraint firstAttribute="width" constant="24" id="us8-Rz-cEO"/>
                                 </constraints>
                                 <connections>
                                     <action selector="showSelected" destination="BYZ-38-t0r" eventType="touchUpInside" id="WaA-cH-YIy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-ml-r9s">
+                                <rect key="frame" x="16" y="492.5" width="343" height="50"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xWf-1K-NBu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Iscriviti">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logupSelected" destination="BYZ-38-t0r" eventType="touchUpInside" id="81A-o6-WVC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,6 +153,7 @@
                             <constraint firstItem="Hr8-Ac-C0C" firstAttribute="top" secondItem="O8W-hz-1BP" secondAttribute="bottom" constant="40" id="E7j-mb-eVK"/>
                             <constraint firstItem="Lcw-PL-Mvd" firstAttribute="top" secondItem="y8r-vd-YXj" secondAttribute="bottom" constant="25" id="EP0-Rq-LdQ"/>
                             <constraint firstItem="y8r-vd-YXj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="GGd-hv-8BS"/>
+                            <constraint firstItem="a5a-ml-r9s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IJY-0P-X6G"/>
                             <constraint firstItem="PBJ-dq-4sk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="LOK-UG-tl4"/>
                             <constraint firstItem="ToV-cf-QST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PDw-7o-mZM"/>
                             <constraint firstItem="ToV-cf-QST" firstAttribute="top" secondItem="PBJ-dq-4sk" secondAttribute="bottom" constant="8" id="T9E-W9-Al7"/>
@@ -147,7 +161,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qf5-Zl-bm1" secondAttribute="trailing" constant="16" id="XGW-r2-1KV"/>
                             <constraint firstItem="Lcw-PL-Mvd" firstAttribute="centerY" secondItem="O8W-hz-1BP" secondAttribute="centerY" id="bEx-lC-9fO"/>
                             <constraint firstItem="Hr8-Ac-C0C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cGP-Bz-VZ9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a5a-ml-r9s" secondAttribute="trailing" constant="16" id="cVJ-D7-Q3a"/>
                             <constraint firstItem="y8r-vd-YXj" firstAttribute="top" secondItem="qf5-Zl-bm1" secondAttribute="bottom" constant="20" id="inD-zq-0JY"/>
+                            <constraint firstItem="a5a-ml-r9s" firstAttribute="top" secondItem="Hr8-Ac-C0C" secondAttribute="bottom" constant="20" id="jga-Ec-CsP"/>
                             <constraint firstItem="qf5-Zl-bm1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nL1-QO-RT1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lcw-PL-Mvd" secondAttribute="trailing" constant="16" id="oKk-9R-Zk6"/>
                             <constraint firstItem="PBJ-dq-4sk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="seV-kb-0kE"/>
@@ -162,6 +178,7 @@
                     <navigationItem key="navigationItem" id="lWj-LI-Bjm"/>
                     <connections>
                         <outlet property="loginBtn" destination="Hr8-Ac-C0C" id="64U-GQ-oON"/>
+                        <outlet property="logupBtn" destination="a5a-ml-r9s" id="bKL-q1-8V4"/>
                         <outlet property="passText" destination="qmU-4W-BFR" id="hdV-9h-0QH"/>
                         <outlet property="passView" destination="qf5-Zl-bm1" id="GVM-Rk-4De"/>
                         <outlet property="saveCredBtn" destination="XO3-Xq-agB" id="VT5-Zb-iF0"/>

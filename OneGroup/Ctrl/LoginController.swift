@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: MyViewController {
+class LoginController: MyViewController, UITextFieldDelegate {
     
     @IBOutlet var userView: UIView!
     @IBOutlet var passView: UIView!
@@ -19,25 +19,20 @@ class LoginController: MyViewController {
     @IBOutlet var saveCredBtn: UIButton!
     @IBOutlet var showPassBtn: UIButton!
     @IBOutlet var loginBtn: UIButton!
-    
+    @IBOutlet var logupBtn: UIButton!
+
     let check = UIImage.init(named: "check")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let ctrl =  (UIApplication.shared.keyWindow?.rootViewController)!
-//        let view = ctrl.view!
-//        let imageView = Config.backImage
-//        imageView.frame = view.frame
-//        imageView.contentMode =  UIViewContentMode.scaleAspectFill
-//        imageView.clipsToBounds = true
-//        view.addSubview(imageView)
-//        view.sendSubview(toBack: imageView)
-
+        userText.delegate = self
+        passText.delegate = self
+ 
         userView.layer.cornerRadius = userView.frame.height / 2
         passView.layer.cornerRadius = passView.frame.height / 2
         loginBtn.layer.cornerRadius = 5
-        
+        logupBtn.layer.cornerRadius = 5
+
         saveCredBtn.layer.borderColor = UIColor.white.cgColor
         saveCredBtn.layer.borderWidth = 2
         showPassBtn.layer.borderColor = UIColor.white.cgColor
@@ -55,6 +50,13 @@ class LoginController: MyViewController {
         if ((userText.text?.count)! > 0 && (passText.text?.count)! > 0) {
             selectButton(btn: saveCredBtn)
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if event?.allTouches?.first?.view == view {
+            view.endEditing(true)
+        }
+        super.touchesBegan(touches, with: event)
     }
     
     @IBAction func saveSelected () {
@@ -83,6 +85,14 @@ class LoginController: MyViewController {
                             self.navigationController?.show(ctrl, sender: self)
         }
     }
+    
+    @IBAction func logupSelected () {
+        let ctrl = WebPage.Instance()
+        ctrl.isLogup = true
+        ctrl.page = "http://onegroup.mebius.it/register"
+        navigationController?.show(ctrl, sender: self)
+    }
+    
     func selectButton(btn: UIButton){
         if (btn.tag > 0) {
             btn.tag = 0
@@ -91,5 +101,14 @@ class LoginController: MyViewController {
             btn.tag = 1
             btn.setBackgroundImage(check, for: .normal)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userText {
+            passText.becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+        }
+        return true
     }
 }
