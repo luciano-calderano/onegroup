@@ -33,7 +33,7 @@ class MYWheel: UIView {
         activityIndicatorContainer.layer.cornerRadius = 10
         
         activityIndicatorView.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
-        activityIndicatorView.style = UIActivityIndicatorView.Style.whiteLarge
+        activityIndicatorView.style = .whiteLarge
         activityIndicatorView.center = CGPoint(x: activityIndicatorContainer.frame.size.width / 2,
                                                y: activityIndicatorContainer.frame.size.height / 2)
         
