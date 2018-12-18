@@ -39,9 +39,9 @@ class WebPage: MyViewController {
             return
         }
         if isLogup {
-            self.wheel.start()
-            let request = URLRequest(url: URL(string: self.page)!)
-            self.webView.load(request)
+            wheel.start()
+            let request = URLRequest(url: URL(string: page)!)
+            webView.load(request)
             return
         }
         User.shared.login { (response) in
@@ -127,7 +127,7 @@ extension WebPage {
                                       handler: { (action) in
         }))
         
-        self.present(alert, animated: true) { }
+        present(alert, animated: true) { }
 
     }
     
@@ -142,12 +142,12 @@ extension WebPage {
                                           preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style:.default, handler: nil)
             alert.addAction(ok)
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             return
         }
         presentPicker(type: .camera)
     }
-
+    
     private func presentPicker (type: UIImagePickerController.SourceType) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -156,8 +156,7 @@ extension WebPage {
         if type == .camera {
             picker.cameraCaptureMode = .photo
         }
-        self.present(picker, animated: true) {
-        }
+        present(picker, animated: true)
     }
 }
 
@@ -165,7 +164,7 @@ extension WebPage {
 
 extension WebPage: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private func close () {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -260,14 +259,7 @@ extension WebPage {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
             self.openPage()
         }))
-        self.present(alert, animated: true, completion: nil)
-        
-//        let content = UNMutableNotificationContent()
-//        content.title = "Invio avvenuto"
-//        content.badge = 1
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-//        let request = UNNotificationRequest(identifier: "MysteryClientJobSent", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        present(alert, animated: true, completion: nil)
     }
 
     private func error(_ err: String) {
@@ -277,16 +269,6 @@ extension WebPage {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
             self.openPage()
         }))
-        self.present(alert, animated: true, completion: nil)
-
-//        let content = UNMutableNotificationContent()
-//        content.title = "Errore"
-//        content.subtitle = "Incarico n. " + id
-//        content.body = "La trasmisisone dell'incarico n. \(id) ha dato il eguente errore: \(err)"
-//        content.badge = 1
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-//        let request = UNNotificationRequest(identifier: "MysteryClientJobSent", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-//
+        present(alert, animated: true, completion: nil)
     }
 }

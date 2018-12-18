@@ -7,102 +7,90 @@
 //
 
 import Foundation
-
 public extension Dictionary {
-    func getVal(_ keys: String) -> Any? {
-        let array = keys.components(separatedBy: ".")
-
-        var dic = self as Dictionary<Key, Value>
+    private func value (_ keys: String) -> Any? {
+        let array = keys.components(separatedBy: "->")
+        
+        var dic = self as! Dictionary<String, Any>
         for key in array.dropLast() {
-            guard let next = dic[key as! Key] else {
+            guard let next = dic[key] as? Dictionary<String, Any> else {
                 return nil
             }
-            guard next is Dictionary<Key, Value> else {
-                return nil
-            }
-            
-            dic = next as! Dictionary<Key, Value>
+            dic = next
         }
         
-        guard let value = dic[array.last! as! Key] else {
-            return nil
-        }
-        
-        if value is String {
-            return value as! String
-        }
-        if value is Array<Any> {
-            return value as! Array<Any>
-        }
-        if value is Dictionary {
-            return value as! Dictionary
-        }
-        if value is Double {
-            return String (describing: value)
-        }
-        if value is Bool {
-            return String (describing: value)
+        if let k = array.last, let value = dic[k] {
+            return value
         }
         return nil
     }
-
+    
     func double (_ key: String) -> Double {
-        guard let ret = self.getVal(key) as? String else {
-            return 0
+        if let v = value(key) {
+            if v is Double {
+                return v as! Double
+            }
+            if let s = v as? String, s.count > 0 {
+                return Double(s)!
+            }
         }
-        if ret.count == 0 {
-            return 0
-        }
-        return Double(ret)!
+        return 0
     }
-
+    
     func int (_ key: String) -> Int {
-        guard let ret = self.getVal(key) as? String else {
-            return 0
+        if let v = value(key) {
+            if v is Int {
+                return v as! Int
+            }
+            if let s = v as? String, s.count > 0 {
+                return Int(s)!
+            }
         }
-        if ret.count == 0 {
-            return 0
-        }
-        return Int(ret)!
-    }
-    
-    func string (_ key: String) -> String {
-        guard let ret = self.getVal(key) as? String else {
-            return ""
-        }
-        return ret
-    }
-    
-    func dictionary(_ key: String) -> Dictionary<Key, Value> {
-        guard let ret = self.getVal(key) as? Dictionary<Key, Value> else {
-            return [:]
-        }
-        return ret
-    }
-    
-    func array(_ key: String) -> Array<Any> {
-        guard let ret = self.getVal(key) as? Array<Any> else {
-            return []
-        }
-        return ret
+        return 0
     }
     
     func bool (_ key: String) -> Bool {
-        guard let ret = self.getVal(key) as? String else {
-            return false
+        if let v = value(key) {
+            if v is Bool {
+                return v as! Bool
+            }
+            if let s = v as? String, s.count > 0 {
+                return s == "1" || s.lowercased() == "true" || s.lowercased().left(lenght: 1) == "y"
+            }
         }
-        return ret == "1"
+        return false
     }
     
-    func date (_ key: String, fmt: String) -> Date? {
-        guard let ret = self.getVal(key) as? String else {
-            return Date.init(timeIntervalSince1970: 0)
+    func date (_ key: String, fmt: String = "") -> Date? {
+        if let v = value(key) {
+            if v is Date {
+                return v as? Date
+            }
+            if fmt.count > 0, let s = v as? String, s.count > 0 {
+                return s.toDate(withFormat: fmt)
+            }
         }
-        if ret.isEmpty {
-            return nil
+        return nil
+    }
+    
+    func string (_ key: String) -> String {
+        if let s = value(key) as? String {
+            return s
         }
-        let d = ret.toDate(withFormat: fmt)
-        return d
+        return ""
+    }
+    
+    func dictionary(_ key: String) -> Dictionary<Key, Value> {
+        if let dict = value(key) as? Dictionary<Key, Value> {
+            return dict
+        }
+        return [:]
+    }
+    
+    func array(_ key: String) -> Array<Any> {
+        if let arr = value(key) as? Array<Any> {
+            return arr
+        }
+        return []
     }
 }
-

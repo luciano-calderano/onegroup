@@ -39,6 +39,22 @@ public extension String {
         let outString = df.string(from: d)
         return outString
     }
+    
+    func fromUtcDate(inputFormat: String, outputFormat: String? = nil) -> String {
+        let df = DateFormatter()
+        df.dateFormat = inputFormat
+        df.timeZone = TimeZone(abbreviation: "UTC")
+        
+        guard let d = df.date(from: self) else {
+            return ""
+        }
+        df.timeZone = TimeZone.current
+        df.calendar = NSCalendar.current
+        df.dateFormat = outputFormat ?? inputFormat
+        let outString = df.string(from: d)
+        return outString
+    }
+
 }
 
 public extension Date {
