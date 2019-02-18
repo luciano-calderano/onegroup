@@ -80,9 +80,22 @@ class LoginController: MyViewController, UITextFieldDelegate {
         User.shared.login(withUser: userText.text!,
                           password: passText.text!,
                           saveData: saveCredBtn.tag > 0) { (response) in
-                            let ctrl = HomeController.Instance()
-                            ctrl.menu = response as! String
-                            self.navigationController?.show(ctrl, sender: self)
+                            if response is NSError {
+                                let r = response as! NSError
+                                let dict = r.userInfo
+                                let code = dict.int("code")
+                                let msg = dict.string("message")
+                                let alert = UIAlertController(title: "Errore \(code)",
+                                                              message: msg,
+                                                              preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                            else {
+                                let ctrl = HomeController.Instance()
+                                ctrl.menu = response as! String
+                                self.navigationController?.show(ctrl, sender: self)
+                            }
         }
     }
     
