@@ -99,9 +99,16 @@ class LoginController: MyViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func passForgotSelected () {
+        let ctrl = WebPage.Instance()
+        ctrl.withoutToken = true
+        ctrl.page = "http://onegroup.mebius.it/password/reset"
+        navigationController?.show(ctrl, sender: self)
+    }
+
     @IBAction func logupSelected () {
         let ctrl = WebPage.Instance()
-        ctrl.isLogup = true
+        ctrl.withoutToken = true
         ctrl.page = "http://onegroup.mebius.it/register"
         navigationController?.show(ctrl, sender: self)
     }

@@ -19,7 +19,7 @@ class WebPage: MyViewController {
     }
     
     var page = ""
-    var isLogup = false
+    var withoutToken = false
     var uploadUrl: URL!
     
     @IBOutlet private var container: UIView!
@@ -38,7 +38,7 @@ class WebPage: MyViewController {
         if page.isEmpty {
             return
         }
-        if isLogup {
+        if withoutToken {
             wheel.start()
             let request = URLRequest(url: URL(string: page)!)
             webView.load(request)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5aH-EB-Glh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5aH-EB-Glh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,6 +146,19 @@
                                     <action selector="logupSelected" destination="BYZ-38-t0r" eventType="touchUpInside" id="81A-o6-WVC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4L-Zr-cBs">
+                                <rect key="frame" x="8" y="635" width="359" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="K1X-kd-eVa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Ho dimenticato la password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="passForgotSelected" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfW-78-B2u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y8r-vd-YXj" secondAttribute="trailing" constant="16" id="2Tq-wJ-XLp"/>
@@ -154,6 +167,7 @@
                             <constraint firstItem="Lcw-PL-Mvd" firstAttribute="top" secondItem="y8r-vd-YXj" secondAttribute="bottom" constant="25" id="EP0-Rq-LdQ"/>
                             <constraint firstItem="y8r-vd-YXj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="GGd-hv-8BS"/>
                             <constraint firstItem="a5a-ml-r9s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IJY-0P-X6G"/>
+                            <constraint firstItem="V4L-Zr-cBs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="L5h-gz-3tV"/>
                             <constraint firstItem="PBJ-dq-4sk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="LOK-UG-tl4"/>
                             <constraint firstItem="ToV-cf-QST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PDw-7o-mZM"/>
                             <constraint firstItem="ToV-cf-QST" firstAttribute="top" secondItem="PBJ-dq-4sk" secondAttribute="bottom" constant="8" id="T9E-W9-Al7"/>
@@ -165,7 +179,9 @@
                             <constraint firstItem="y8r-vd-YXj" firstAttribute="top" secondItem="qf5-Zl-bm1" secondAttribute="bottom" constant="20" id="inD-zq-0JY"/>
                             <constraint firstItem="a5a-ml-r9s" firstAttribute="top" secondItem="Hr8-Ac-C0C" secondAttribute="bottom" constant="20" id="jga-Ec-CsP"/>
                             <constraint firstItem="qf5-Zl-bm1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nL1-QO-RT1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V4L-Zr-cBs" secondAttribute="trailing" constant="8" id="nv4-f7-ycD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lcw-PL-Mvd" secondAttribute="trailing" constant="16" id="oKk-9R-Zk6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V4L-Zr-cBs" secondAttribute="bottom" constant="8" id="rjA-zO-Sg1"/>
                             <constraint firstItem="PBJ-dq-4sk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="seV-kb-0kE"/>
                             <constraint firstItem="Lcw-PL-Mvd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="shW-y7-ZIC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hr8-Ac-C0C" secondAttribute="trailing" constant="16" id="u6x-tj-NMW"/>
