@@ -15,13 +15,15 @@ typealias JsonDict = Dictionary<String, Any>
 func Lng(_ key: String) -> String {
     return MYLang.value(key)
 }
-
 struct Config {
     struct Url {
-        static let home  = "http://onegroup.mebius.it/"
-        static let grant = Config.Url.home + "oauth/access_token"
-        static let get   = Config.Url.home + "default/rest/get"
-        static let post  = Config.Url.home + "default/rest/post"
+        static let home         = "http://onegroup.mebius.it/"
+        static let grant        = home + "oauth/access_token"
+        static let get          = home + "default/rest/get"
+        static let post         = home + "default/rest/post"
+        static let passReset    = home + "password/reset"
+        static let register     = home + "register"
+        
     }
     struct Auth {
         static let header = "Auth "

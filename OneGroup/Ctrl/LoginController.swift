@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: MyViewController, UITextFieldDelegate {
+class LoginController: MyViewController {
     
     @IBOutlet var userView: UIView!
     @IBOutlet var passView: UIView!
@@ -80,40 +80,28 @@ class LoginController: MyViewController, UITextFieldDelegate {
         User.shared.login(withUser: userText.text!,
                           password: passText.text!,
                           saveData: saveCredBtn.tag > 0) { (response) in
-                            if response is NSError {
-                                let r = response as! NSError
-                                let dict = r.userInfo
-                                let code = dict.int("code")
-                                let msg = dict.string("message")
-                                let alert = UIAlertController(title: "Errore \(code)",
-                                                              message: msg,
-                                                              preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
-                            }
-                            else {
-                                let ctrl = HomeController.Instance()
-                                ctrl.menu = response as! String
-                                self.navigationController?.show(ctrl, sender: self)
-                            }
+                            let ctrl = HomeController.Instance()
+                            ctrl.menu = response as! String
+                            self.navigationController?.show(ctrl, sender: self)
         }
     }
     
     @IBAction func passForgotSelected () {
-        let ctrl = WebPage.Instance()
-        ctrl.withoutToken = true
-        ctrl.page = "http://onegroup.mebius.it/password/reset"
-        navigationController?.show(ctrl, sender: self)
+        openPage(Config.Url.passReset)
     }
 
-    @IBAction func logupSelected () {
+    @IBAction func registerSelected () {
+        openPage(Config.Url.register)
+    }
+    
+    private func openPage(_ page: String, needToken: Bool = false) {
         let ctrl = WebPage.Instance()
-        ctrl.withoutToken = true
-        ctrl.page = "http://onegroup.mebius.it/register"
+        ctrl.needToken = needToken
+        ctrl.page = page
         navigationController?.show(ctrl, sender: self)
     }
     
-    func selectButton(btn: UIButton){
+    private func selectButton(btn: UIButton){
         if (btn.tag > 0) {
             btn.tag = 0
             btn.setBackgroundImage(UIImage(), for: .normal)
@@ -122,7 +110,9 @@ class LoginController: MyViewController, UITextFieldDelegate {
             btn.setBackgroundImage(check, for: .normal)
         }
     }
-    
+}
+
+extension LoginController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userText {
             passText.becomeFirstResponder()

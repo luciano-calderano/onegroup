@@ -48,12 +48,6 @@ class User  {
         let req = MYHttp.init(.grant, param: dict)
         req.load(ok: {
             (response) in
-            if response.int("code") > 0 {
-                let err = NSError(domain: "", code: response.int("code"), userInfo: response)
-                completion(err)
-                return
-            }
-            
             let dictToken = response.dictionary("token")
             self.token = dictToken.string("access_token")
             completion (response.string("menu"))

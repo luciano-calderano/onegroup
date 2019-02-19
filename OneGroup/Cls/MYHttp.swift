@@ -74,7 +74,14 @@ class MYHttp {
             let dict = response.value as! JsonDict
             return dict
         }
-        let errorMessage = response.error == nil ? "Server error" :  (response.error?.localizedDescription)!
+        
+        var errorMessage = response.error == nil ? "Server error" :  (response.error?.localizedDescription)!
+        if let dict = response.value as? JsonDict {
+            let msg = dict.string("message")
+            if msg.count > 0 {
+                errorMessage = msg
+            }            
+        }
         let err = Error(title: "Server error \(statusCode ?? 0)\n[ \(page) ]", message: errorMessage)
 
         let error = err
