@@ -9,12 +9,15 @@
 import UIKit
 
 class MYWheel: UIView {
-    let activityIndicatorView = UIActivityIndicatorView()
-    init(_ start: Bool = false) {
+    var containerColor = UIColor.darkGray
+    var containerBorder = UIColor.lightGray
+
+    private let wheel = UIActivityIndicatorView()
+    init(_ startWheel: Bool = false) {
         super.init(frame: UIScreen.main.bounds)
-        self.initialize()
-        if start {
-            self.start()
+        initialize()
+        if startWheel {
+            start()
         }
     }
     
@@ -22,36 +25,35 @@ class MYWheel: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func initialize () {
-        self.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.1) //UIColor.clearColor()
-        let activityIndicatorContainer: UIView = UIView()
-        activityIndicatorContainer.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        activityIndicatorContainer.center = self.center
-        activityIndicatorContainer.backgroundColor = UIColor.darkGray
-        activityIndicatorContainer.alpha = 0.9
-        activityIndicatorContainer.clipsToBounds = true
-        activityIndicatorContainer.layer.cornerRadius = 10
+    private func initialize () {
+        backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.66)
+        let container = UIView()
+        container.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        container.center = self.center
+        container.backgroundColor = containerColor
+        container.alpha = 0.9
+        container.clipsToBounds = true
+        container.layer.cornerRadius = 10
+        container.layer.borderWidth = 1
+        container.layer.borderColor = containerBorder.cgColor
+        addSubview(container)
+
+        wheel.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
+        wheel.style = .whiteLarge
+        wheel.center = CGPoint(x: container.frame.size.width / 2, y: container.frame.size.height / 2)
+        container.addSubview(wheel)
         
-        activityIndicatorView.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
-        activityIndicatorView.style = .whiteLarge
-        activityIndicatorView.center = CGPoint(x: activityIndicatorContainer.frame.size.width / 2,
-                                               y: activityIndicatorContainer.frame.size.height / 2)
-        
-        activityIndicatorContainer.addSubview(activityIndicatorView)
-        
-        self.addSubview(activityIndicatorContainer)
     }
     
     func stop () {
-        self.activityIndicatorView.stopAnimating()
-        self.isHidden = true
-        self.removeFromSuperview()
+        wheel.stopAnimating()
+        isHidden = true
+        removeFromSuperview()
     }
     
-    func start(_ uiView: UIView = UIApplication.shared.keyWindow!) -> Void {
-        self.frame = uiView.bounds
-//        self.center = uiView.center
+    func start(_ uiView: UIView = UIApplication.shared.keyWindow!) {
+        frame = uiView.bounds
         uiView.addSubview(self)
-        activityIndicatorView.startAnimating()
+        wheel.startAnimating()
     }
 }

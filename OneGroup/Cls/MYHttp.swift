@@ -15,17 +15,11 @@ import Foundation
 import Alamofire
 
 class MYHttp {
-    struct Error {
-        public var title = ""
-        public var message = ""
-    }
-    
-    static let printJson = true
+    static private let printJson = true
     
     private var json = JsonDict()    
-    private var type: HTTPMethod!
+    private var afType: HTTPMethod!
     private var apiUrl = ""
-    
     private var myWheel:MYWheel?
     
     init(_ httpType: MYHttpType, param: JsonDict, showWheel: Bool = true) {
@@ -33,13 +27,13 @@ class MYHttp {
         
         switch httpType {
         case .get:
-            type = .get
+            afType = .get
             apiUrl = Config.Url.get
         case .grant:
-            type = .post
+            afType = .post
             apiUrl = Config.Url.grant
         case .post:
-            type = .post
+            afType = .post
             apiUrl = Config.Url.post
         }
         
@@ -54,62 +48,57 @@ class MYHttp {
             headers["Authorization"] = Config.Auth.header + Config.Auth.token
         }
         
-        Alamofire.request(apiUrl,
-                          method: type,
-                          parameters: json,
-                          headers: headers).responseJSON(completionHandler: { response in
-                            self.startWheel(false)
-                            if let json = self.fixResponse(response) {
-                                ok (json)
-                            }
+        let af = Alamofire.request(apiUrl, method: afType, parameters: json, headers: headers)
+        af.responseJSON(completionHandler: { response in
+            self.startWheel(false)
+            if let json = self.fixResponse(response) {
+                ok (json)
+            }
         })
     }
     
+// MARK: - private -
+    
     private func fixResponse (_ response: DataResponse<Any>) -> JsonDict? {
         let statusCode = response.response?.statusCode
-        let array = apiUrl.components(separatedBy: "/")
-        let page = array.last ?? apiUrl
         
-        if response.result.isSuccess && statusCode == 200 {
-            let dict = response.value as! JsonDict
+        if response.result.isSuccess && statusCode == 200, let dict = response.value as? JsonDict {
             return dict
         }
-        
-        var errorMessage = response.error == nil ? "Server error" :  (response.error?.localizedDescription)!
+
+        var errTitle = response.error?.localizedDescription ?? "Generic error"
         if let dict = response.value as? JsonDict {
             let msg = dict.string("message")
-            if msg.count > 0 {
-                errorMessage = msg
-            }            
+            if msg.isEmpty == false {
+                errTitle = msg
+            }
         }
-        let err = Error(title: "Server error \(statusCode ?? 0)\n[ \(page) ]", message: errorMessage)
-
-        let error = err
-        let alert = UIAlertController(title: error.title, message: error.message, preferredStyle: .alert)
+        let page = apiUrl.components(separatedBy: "/").last ?? apiUrl
+        let errSubtitle = "\nServer error \(statusCode ?? 0)\n[ \(page) ]\n"
+        
+        let alert = UIAlertController(title: errTitle, message: errSubtitle, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        let ctrl = UIApplication.shared.keyWindow?.rootViewController
-        ctrl?.present(alert, animated: true, completion: nil)
+        if let ctrl = UIApplication.shared.keyWindow?.rootViewController {
+            ctrl.present(alert, animated: true, completion: nil)
+        }
         return nil
     }
     
-    // MARK: - private
-    
-    fileprivate func printJson (_ json: JsonDict) {
+    private func printJson (_ json: JsonDict) {
         if MYHttp.printJson {
             print("\n[ \(apiUrl) ]\n\(json)\n------------")
         }
     }
     
-    fileprivate func startWheel(_ start: Bool, inView: UIView = UIApplication.shared.keyWindow!) {
+    private func startWheel(_ start: Bool, inView: UIView = UIApplication.shared.keyWindow!) {
         if start {
             myWheel = MYWheel()
             myWheel?.start(inView)
+            return
         }
-        else {
-            if let wheel = myWheel {
-                wheel.stop()
-                myWheel = nil
-            }
+        if let wheel = myWheel {
+            wheel.stop()
+            myWheel = nil
         }
     }
 }
