@@ -45,6 +45,8 @@ class LoginController: MyViewController {
         #if DEBUG
         userText.text = "admin@admin.it"
         passText.text = "admin_0n3"
+        userText.text = "strumenti4web@gmail.com"
+        passText.text = "okokok"
         #endif
         
         if ((userText.text?.count)! > 0 && (passText.text?.count)! > 0) {
