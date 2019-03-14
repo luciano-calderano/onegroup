@@ -21,9 +21,8 @@ struct Config {
         static let grant        = home + "oauth/access_token"
         static let get          = home + "default/rest/get"
         static let post         = home + "default/rest/post"
-        static let passReset    = home + "password/reset"
+        static let passReset    = home + "password/reset?mobile=1"
         static let register     = home + "register"
-        
     }
     struct Auth {
         static let header = "Auth "
