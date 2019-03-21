@@ -34,7 +34,10 @@ class MenuView: UIView {
         super.awakeFromNib()
         let tapBack = UITapGestureRecognizer.init(target: self, action: #selector(closeMenu))
         self.backView.addGestureRecognizer(tapBack)
-        titleLabel.text = "One Group 1.0"
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            titleLabel.text = "One Group " + version
+        }
+        
     }
     
     @IBAction func closeMenu () {
