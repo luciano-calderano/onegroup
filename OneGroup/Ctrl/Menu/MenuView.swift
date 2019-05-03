@@ -35,7 +35,7 @@ class MenuView: UIView {
         let tapBack = UITapGestureRecognizer.init(target: self, action: #selector(closeMenu))
         self.backView.addGestureRecognizer(tapBack)
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            titleLabel.text = "One Group " + version
+            titleLabel.text = "Vers." + version
         }
         
     }

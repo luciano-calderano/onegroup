@@ -23,6 +23,8 @@ struct Config {
         static let post         = home + "default/rest/post"
         static let passReset    = home + "password/reset?mobile=1"
         static let register     = home + "register"
+        static let sponsor      = URL(string: "http://bitjob.mebius.it/utility/logosponsor/logosponsor.png")
+        static let sponsorFile  = URL(fileURLWithPath: NSTemporaryDirectory() + "sponsor.png")
     }
     struct Auth {
         static let header = "Auth "

@@ -32,7 +32,8 @@ class HomeController: MyViewController {
 //    @IBOutlet var menuButton: MyBackButton!
     @IBOutlet var homeTableView: UITableView!
     @IBOutlet var tableViewHeight: NSLayoutConstraint!
-    
+    @IBOutlet var sponsorImage: UIImageView!
+
     private var dataArray = [String]()
     private var menuDict = JsonDict()
     private let menuView = MenuView.Instance()
@@ -51,7 +52,18 @@ class HomeController: MyViewController {
         menuView.delegate = self
         menuView.dataArray = dataArray;
         view.addSubview(menuView)
-//        menuButton.imageEdgeInsets = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        do {
+            let data = try Data(contentsOf: Config.Url.sponsorFile)
+            sponsorImage.image = UIImage(data: data)
+            sponsorImage.isHidden = false
+        }
+        catch {
+            sponsorImage.isHidden = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
