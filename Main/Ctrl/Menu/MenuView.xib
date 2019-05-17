@@ -36,7 +36,7 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-3p-TOv" customClass="MyBackButton" customModule="OneGroup" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                            <rect key="frame" x="0.0" y="20" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="DP6-rW-eid"/>
                                 <constraint firstAttribute="height" constant="40" id="Rg7-16-kow"/>
@@ -49,7 +49,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.16078431369999999" green="0.21176470589999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="juR-Ad-NaX" firstAttribute="top" secondItem="UAp-ZM-BKd" secondAttribute="top" constant="20" id="6vv-l2-mkO"/>
                         <constraint firstItem="1ud-3p-TOv" firstAttribute="leading" secondItem="UAp-ZM-BKd" secondAttribute="leading" id="J2z-XT-K7H"/>
@@ -57,7 +57,7 @@
                         <constraint firstAttribute="trailing" secondItem="RlD-I2-RDe" secondAttribute="trailing" constant="40" id="Zap-Ed-aRK"/>
                         <constraint firstItem="RlD-I2-RDe" firstAttribute="leading" secondItem="UAp-ZM-BKd" secondAttribute="leading" constant="10" id="bJw-3K-Ez4"/>
                         <constraint firstItem="juR-Ad-NaX" firstAttribute="centerX" secondItem="UAp-ZM-BKd" secondAttribute="centerX" id="ejW-gD-O4a"/>
-                        <constraint firstItem="1ud-3p-TOv" firstAttribute="top" secondItem="UAp-ZM-BKd" secondAttribute="top" id="jwV-2d-yFO"/>
+                        <constraint firstItem="1ud-3p-TOv" firstAttribute="top" secondItem="UAp-ZM-BKd" secondAttribute="top" constant="20" id="jwV-2d-yFO"/>
                         <constraint firstAttribute="bottom" secondItem="RlD-I2-RDe" secondAttribute="bottom" constant="20" id="wWd-Dg-tjS"/>
                     </constraints>
                 </view>

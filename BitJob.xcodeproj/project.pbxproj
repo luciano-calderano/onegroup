@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0422A5C018F7019B2C0213A3 /* Pods_OneGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60DDE02E9E8622F387B2FD42 /* Pods_OneGroup.framework */; };
 		7E8B8CC384B86620DFFD87BA /* Pods_OneGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77E32761E3665794E471A23 /* Pods_OneGroup.framework */; };
 		8B42DB472110952C00B6BC91 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B42DB462110952C00B6BC91 /* Default-568h@2x.png */; };
 		8B43D3A32111A69F0074C374 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43D3A22111A69F0074C374 /* User.swift */; };
@@ -32,7 +31,7 @@
 		60DDE02E9E8622F387B2FD42 /* Pods_OneGroup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneGroup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B42DB462110952C00B6BC91 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8B43D3A22111A69F0074C374 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		8BE453CD21108BC900441D46 /* OneGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BE453CD21108BC900441D46 /* BitJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE453D021108BC900441D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE453DA21108BCB00441D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BE453DD21108BCB00441D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E8B8CC384B86620DFFD87BA /* Pods_OneGroup.framework in Frameworks */,
-				0422A5C018F7019B2C0213A3 /* Pods_OneGroup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +109,7 @@
 		8BE453C421108BC900441D46 = {
 			isa = PBXGroup;
 			children = (
-				8BE453CF21108BC900441D46 /* OneGroup */,
+				8BE453CF21108BC900441D46 /* Main */,
 				E41885E98F04535987A37254 /* Pods */,
 				6D169BBB930D5D676D2BEF2B /* Frameworks */,
 			);
@@ -120,13 +118,13 @@
 		8BE453CE21108BC900441D46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8BE453CD21108BC900441D46 /* OneGroup.app */,
+				8BE453CD21108BC900441D46 /* BitJob.app */,
 			);
 			name = Products;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		8BE453CF21108BC900441D46 /* OneGroup */ = {
+		8BE453CF21108BC900441D46 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				8BFF80592111E85F00002957 /* Ctrl */,
@@ -134,7 +132,7 @@
 				8B42DB442110949600B6BC91 /* Assets */,
 				8BEDA66321109A5E002A3F94 /* Cls */,
 			);
-			path = OneGroup;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		8BEDA66321109A5E002A3F94 /* Cls */ = {
@@ -181,9 +179,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8BE453CC21108BC900441D46 /* OneGroup */ = {
+		8BE453CC21108BC900441D46 /* BitJob */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BE453E221108BCB00441D46 /* Build configuration list for PBXNativeTarget "OneGroup" */;
+			buildConfigurationList = 8BE453E221108BCB00441D46 /* Build configuration list for PBXNativeTarget "BitJob" */;
 			buildPhases = (
 				224D42173ACC8D76AAEBDDF4 /* [CP] Check Pods Manifest.lock */,
 				8BE453C921108BC900441D46 /* Sources */,
@@ -195,9 +193,9 @@
 			);
 			dependencies = (
 			);
-			name = OneGroup;
+			name = BitJob;
 			productName = OneGroup;
-			productReference = 8BE453CD21108BC900441D46 /* OneGroup.app */;
+			productReference = 8BE453CD21108BC900441D46 /* BitJob.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -207,16 +205,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Developer;
 				TargetAttributes = {
 					8BE453CC21108BC900441D46 = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
-			buildConfigurationList = 8BE453C821108BC900441D46 /* Build configuration list for PBXProject "OneGroup" */;
+			buildConfigurationList = 8BE453C821108BC900441D46 /* Build configuration list for PBXProject "BitJob" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8BE453CC21108BC900441D46 /* OneGroup */,
+				8BE453CC21108BC900441D46 /* BitJob */,
 			);
 		};
 /* End PBXProject section */
@@ -445,7 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2DWY28S5B;
-				INFOPLIST_FILE = OneGroup/App/Info.plist;
+				INFOPLIST_FILE = Main/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,7 +451,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = it.mebius.one.group;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -465,7 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2DWY28S5B;
-				INFOPLIST_FILE = OneGroup/App/Info.plist;
+				INFOPLIST_FILE = Main/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,7 +471,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = it.mebius.one.group;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -481,7 +479,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8BE453C821108BC900441D46 /* Build configuration list for PBXProject "OneGroup" */ = {
+		8BE453C821108BC900441D46 /* Build configuration list for PBXProject "BitJob" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BE453E021108BCB00441D46 /* Debug */,
@@ -490,7 +488,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BE453E221108BCB00441D46 /* Build configuration list for PBXNativeTarget "OneGroup" */ = {
+		8BE453E221108BCB00441D46 /* Build configuration list for PBXNativeTarget "BitJob" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BE453E321108BCB00441D46 /* Debug */,

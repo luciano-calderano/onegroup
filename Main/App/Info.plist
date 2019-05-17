@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7</string>
+	<string>1.7.1</string>
 	<key>CFBundleVersion</key>
-	<string>190503</string>
+	<string>190512</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,9 +28,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Permetti a OneGroup di usare la tua fotocamera ?</string>
+	<string>Permetti a BitJob di usare la tua fotocamera ?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Permetti a OneGroup di usare le tue foto ?</string>
+	<string>Permetti a BitJob di usare le tue foto ?</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -43,11 +43,11 @@ class HomeController: MyViewController {
         homeTableView.backgroundColor = UIColor.clear
         homeTableView.separatorColor = UIColor.clear
         
-        tableViewHeight.constant = CGFloat(dataArray.count * 80)
-        if (tableViewHeight.constant > 400) {
-            tableViewHeight.constant = 400
-        }
-        
+//        tableViewHeight.constant = CGFloat(dataArray.count * 80)
+//        if (tableViewHeight.constant > 400) {
+//            tableViewHeight.constant = 400
+//        }
+//        
         menuView.isHidden = true
         menuView.delegate = self
         menuView.dataArray = dataArray;
@@ -56,14 +56,8 @@ class HomeController: MyViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        do {
-            let data = try Data(contentsOf: Config.Url.sponsorFile)
-            sponsorImage.image = UIImage(data: data)
-            sponsorImage.isHidden = false
-        }
-        catch {
-            sponsorImage.isHidden = true
-        }
+        loadSponsor()
+        getSponsor()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,6 +86,29 @@ class HomeController: MyViewController {
         let ctrl = WebPage.Instance()
         ctrl.page = page
         navigationController?.show(ctrl, sender: self)
+    }
+    
+    private func getSponsor () {
+        do {
+            let data = try Data(contentsOf: Config.Url.sponsor!)
+            try data.write(to: Config.Url.sponsorFile)
+            loadSponsor()
+        }
+        catch {
+            print("errore sponsor")
+        }
+    }
+
+    private func loadSponsor () {
+        
+        do {
+            let data = try Data(contentsOf: Config.Url.sponsorFile)
+            sponsorImage.image = UIImage(data: data)
+            sponsorImage.isHidden = false
+        }
+        catch {
+            sponsorImage.isHidden = true
+        }
     }
 }
 
