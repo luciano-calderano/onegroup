@@ -36,7 +36,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginController" id="BYZ-38-t0r" customClass="LoginController" customModule="OneGroup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="BYZ-38-t0r" customClass="LoginController" customModule="BitJob" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
         <!--Home Controller-->
         <scene sceneID="Hwh-3e-vV9">
             <objects>
-                <viewController storyboardIdentifier="HomeController" id="A8F-ng-PgK" customClass="HomeController" customModule="OneGroup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" id="A8F-ng-PgK" customClass="HomeController" customModule="BitJob" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpa-9E-nh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +227,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="va5-zA-1fy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeO-sc-XCn" customClass="MyBackButton" customModule="OneGroup" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeO-sc-XCn" customClass="MyBackButton" customModule="BitJob" customModuleProvider="target">
                                         <rect key="frame" x="16" y="28" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="M9R-M8-cWX"/>
@@ -256,16 +256,16 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4vV-zQ-iub">
-                                <rect key="frame" x="40" y="484" width="295" height="143"/>
+                                <rect key="frame" x="40" y="444" width="295" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4vV-zQ-iub" secondAttribute="height" multiplier="537:260" id="gpJ-HR-gej"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ccw-aH-Noy">
-                                <rect key="frame" x="16" y="140" width="343" height="324"/>
+                                <rect key="frame" x="16" y="100" width="343" height="314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="64" id="WQR-sI-nzH" customClass="HomeCell" customModule="OneGroup" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="64" id="WQR-sI-nzH" customClass="HomeCell" customModule="BitJob" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WQR-sI-nzH" id="Rlh-mv-K37">
@@ -302,14 +302,14 @@
                         <constraints>
                             <constraint firstItem="auv-zU-6QM" firstAttribute="trailing" secondItem="Ccw-aH-Noy" secondAttribute="trailing" constant="16" id="69V-Q4-Bht"/>
                             <constraint firstItem="va5-zA-1fy" firstAttribute="top" secondItem="mpa-9E-nh3" secondAttribute="top" id="AGd-88-H5O"/>
-                            <constraint firstItem="4vV-zQ-iub" firstAttribute="top" secondItem="Ccw-aH-Noy" secondAttribute="bottom" constant="20" id="N5A-9c-CbZ"/>
+                            <constraint firstItem="4vV-zQ-iub" firstAttribute="top" secondItem="Ccw-aH-Noy" secondAttribute="bottom" constant="30" id="N5A-9c-CbZ"/>
                             <constraint firstItem="va5-zA-1fy" firstAttribute="trailing" secondItem="auv-zU-6QM" secondAttribute="trailing" id="NX8-5t-KL8"/>
                             <constraint firstItem="va5-zA-1fy" firstAttribute="leading" secondItem="auv-zU-6QM" secondAttribute="leading" id="VRj-tw-fDG"/>
                             <constraint firstItem="auv-zU-6QM" firstAttribute="trailing" secondItem="4vV-zQ-iub" secondAttribute="trailing" constant="40" id="gxp-ca-sHf"/>
                             <constraint firstItem="4vV-zQ-iub" firstAttribute="leading" secondItem="auv-zU-6QM" secondAttribute="leading" constant="40" id="k0A-ka-0V2"/>
                             <constraint firstItem="Ccw-aH-Noy" firstAttribute="leading" secondItem="auv-zU-6QM" secondAttribute="leading" constant="16" id="wjw-JE-dx5"/>
-                            <constraint firstItem="Ccw-aH-Noy" firstAttribute="top" secondItem="va5-zA-1fy" secondAttribute="bottom" constant="60" id="x8R-dB-auh"/>
-                            <constraint firstItem="auv-zU-6QM" firstAttribute="bottom" secondItem="4vV-zQ-iub" secondAttribute="bottom" constant="40" id="zYK-VC-Y5n"/>
+                            <constraint firstItem="Ccw-aH-Noy" firstAttribute="top" secondItem="va5-zA-1fy" secondAttribute="bottom" constant="20" id="x8R-dB-auh"/>
+                            <constraint firstItem="auv-zU-6QM" firstAttribute="bottom" secondItem="4vV-zQ-iub" secondAttribute="bottom" constant="80" id="zYK-VC-Y5n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="auv-zU-6QM"/>
                     </view>
@@ -325,7 +325,7 @@
         <!--Web Page-->
         <scene sceneID="c6I-O4-NFQ">
             <objects>
-                <viewController storyboardIdentifier="WebPage" id="NyX-Nu-Zyu" customClass="WebPage" customModule="OneGroup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebPage" id="NyX-Nu-Zyu" customClass="WebPage" customModule="BitJob" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VKx-iE-F9G"/>
                         <viewControllerLayoutGuide type="bottom" id="LA8-lu-P2W"/>
@@ -334,7 +334,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRt-yw-qTy" customClass="MyBackButton" customModule="OneGroup" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRt-yw-qTy" customClass="MyBackButton" customModule="BitJob" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="9rC-hg-Zdt"/>

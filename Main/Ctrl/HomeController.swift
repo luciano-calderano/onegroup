@@ -22,16 +22,19 @@ class HomeController: MyViewController {
         let ctrlId = String (describing: self)
         return sb.instantiateViewController(withIdentifier: ctrlId) as! HomeController
     }
-
     var menu = "" {
         didSet {
             createMenu()
         }
     }
-    
-//    @IBOutlet var menuButton: MyBackButton!
+    var social: Any? {
+        didSet {
+            createSocial()
+        }
+    }
+    private var socials = [MySocial]()
+
     @IBOutlet var homeTableView: UITableView!
-    @IBOutlet var tableViewHeight: NSLayoutConstraint!
     @IBOutlet var sponsorImage: UIImageView!
 
     private var dataArray = [String]()
@@ -43,11 +46,6 @@ class HomeController: MyViewController {
         homeTableView.backgroundColor = UIColor.clear
         homeTableView.separatorColor = UIColor.clear
         
-//        tableViewHeight.constant = CGFloat(dataArray.count * 80)
-//        if (tableViewHeight.constant > 400) {
-//            tableViewHeight.constant = 400
-//        }
-//        
         menuView.isHidden = true
         menuView.delegate = self
         menuView.dataArray = dataArray;
@@ -80,6 +78,59 @@ class HomeController: MyViewController {
         }
     }
     
+    struct MySocial {
+        var image = ""
+        var link = ""
+    }
+    private func createSocial() {
+        guard let value = social as? String else { return }
+        
+        var items = value.replacingOccurrences(of: "\":\"", with: "|")
+        items = items.replacingOccurrences(of: "\"", with: "")
+        items = items.replacingOccurrences(of: "\\", with: "")
+        items = items.replacingOccurrences(of: "{", with: "")
+        items = items.replacingOccurrences(of: "}", with: "")
+        for item in items.components(separatedBy: ",") {
+            var s = MySocial()
+            let arr = item.components(separatedBy: "|")
+            s.image = arr[0]
+            s.link = arr[1]
+            socials.append(s)
+        }
+        
+        let size = CGFloat(32)
+        var x = CGFloat(10)
+        let y = UIScreen.main.bounds.height - (size + 10)
+        var index = 0
+        for social in socials {
+            let rect = CGRect(x: x, y: y, width: size, height: size)
+            do {
+                let data = try Data(contentsOf: URL(string: social.image)!)
+                let image = UIImage(data: data, scale: 1)
+                let btn = UIButton(frame: rect)
+                btn.setImage(image, for: .normal)
+                btn.tag = index
+                btn.addTarget(self, action:#selector(socialTapped(sender:)), for: .touchUpInside)
+                view.addSubview(btn)
+                x += (size + 10)
+                index += 1
+            }
+            catch {
+                continue
+            }
+        }
+    }
+    
+    @objc func socialTapped(sender: UIButton) {
+        let link = socials[sender.tag].link
+        let url = URL(string: link)
+        if UIApplication.shared.canOpenURL(url!) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
     private func selectedItem (atIndex index: Int) {
         let key = dataArray[index]
         let page = menuDict.string(key)
@@ -99,8 +150,7 @@ class HomeController: MyViewController {
         }
     }
 
-    private func loadSponsor () {
-        
+    private func loadSponsor () {        
         do {
             let data = try Data(contentsOf: Config.Url.sponsorFile)
             sponsorImage.image = UIImage(data: data)

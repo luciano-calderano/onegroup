@@ -83,7 +83,13 @@ class LoginController: MyViewController {
                           password: passText.text!,
                           saveData: saveCredBtn.tag > 0) { (response) in
                             let ctrl = HomeController.Instance()
-                            ctrl.menu = response as! String
+                            let resp = response as! [Any]
+                            
+                            ctrl.menu = resp.first as! String
+                            if resp.count > 1 {
+                                ctrl.social = resp[1]
+                            }
+                            
                             self.navigationController?.show(ctrl, sender: self)
         }
     }
@@ -124,3 +130,4 @@ extension LoginController: UITextFieldDelegate {
         return true
     }
 }
+

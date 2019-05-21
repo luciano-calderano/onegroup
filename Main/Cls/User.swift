@@ -50,7 +50,9 @@ class User  {
             (response) in
             let dictToken = response.dictionary("token")
             self.token = dictToken.string("access_token")
-            completion (response.string("menu"))
+            let social = response.string("socials")
+            let menu = response.string("menu")
+            completion ([menu, social])
         })
     }
 }
