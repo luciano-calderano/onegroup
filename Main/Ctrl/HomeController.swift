@@ -73,7 +73,16 @@ class HomeController: MyViewController {
     
     private func createMenu() {
         menuDict = menu.toJSON() as! JsonDict
+        var tmp = [String.Index: String]()
+
         for key in menuDict.keys {
+            if let range = menu.range(of: key) {
+                let min = range.lowerBound
+                tmp[min] = key
+            }
+        }
+        for pos in tmp.keys.sorted() {
+            let key = tmp[pos]!
             dataArray.append(key)
         }
     }
