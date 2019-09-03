@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.7.1</string>
 	<key>CFBundleVersion</key>
-	<string>190723</string>
+	<string>190725</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,9 +28,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Permetti a BitJob di usare la tua fotocamera ?</string>
+	<string>L&apos;app vorrebbe usare il la fotocamera per permetterti di scattare una foto  per caricarla nella tua pagina web.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Permetti a BitJob di usare le tue foto ?</string>
+	<string>L&apos;app vorrebbe usare il contenuto della galleria per permetterti di selezionare una foto per caricarla nella tua pagina web.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

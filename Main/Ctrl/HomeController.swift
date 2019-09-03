@@ -133,10 +133,15 @@ class HomeController: MyViewController {
     @objc func socialTapped(sender: UIButton) {
         let link = socials[sender.tag].link
         let url = URL(string: link)
-        if UIApplication.shared.canOpenURL(url!) {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-            }
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url!, options: [:], completionHandler: { (valid) in
+                if valid == false {
+                    print(valid)
+                }
+            })
+        }
+        else {
+            UIApplication.shared.openURL(url!)
         }
     }
     

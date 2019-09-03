@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_OneGroupVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_OneGroupVersionString[];
+FOUNDATION_EXPORT double Pods_BitJobVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_BitJobVersionString[];
 

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+public var jsonSeparator = "->"
 public extension Dictionary {
     private func value (_ keys: String) -> Any? {
-        let array = keys.components(separatedBy: "->")
+        let array = keys.components(separatedBy: jsonSeparator)
         
         var dic = self as! Dictionary<String, Any>
         for key in array.dropLast() {

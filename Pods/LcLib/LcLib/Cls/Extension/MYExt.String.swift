@@ -9,6 +9,28 @@
 import Foundation
 
 public extension String {
+    func substringLeft (numOfChar: Int) -> String {
+        return substring(from: 0, to: numOfChar - 1)
+    }
+    func substringRight (numOfChar: Int) -> String {
+        return substring(from: self.count - numOfChar, to: self.count - 1)
+    }
+    func substring(from: Int, numOfChar: Int) -> String {
+        return substring(from: from, to: from + numOfChar - 1)
+    }
+    func substring(from: Int, to: Int) -> String {
+        if self.isEmpty { return "" }
+        let max = self.count - 1
+        if from > max || to > max || from > to { return "" }
+        let ini = self.index(self.startIndex, offsetBy: from)
+        let end = self.index(self.startIndex, offsetBy: to)
+        return String(self[ini...end])
+    }
+    
+    func localized(comment: String = "") -> String {
+        return NSLocalizedString(self, tableName: nil, comment: comment)
+    }
+    
     func left (lenght l: Int) -> String {
         if (l < 1) {
             return ""
@@ -16,7 +38,7 @@ public extension String {
         let fine = l < count ? l : count
         return range(0, fine: fine)
     }
-
+    
     func mid (startAtChar iniz: Int, lenght l: Int = 0) -> String {
         if iniz > count {
             return ""
@@ -25,7 +47,7 @@ public extension String {
         let f = (l == 0 || (i + l) > count) ? count : (i + l)
         return range(i, fine: f)
     }
-
+    
     func right (l: Int) -> String {
         if (l < 1) {
             return ""
@@ -43,5 +65,5 @@ public extension String {
         let s = self[ini..<end]
         return String(s)
     }
-
+    
 }

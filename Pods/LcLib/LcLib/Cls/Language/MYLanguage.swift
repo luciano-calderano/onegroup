@@ -31,7 +31,7 @@ public class MYLang {
     
     public func setLanguage(code: String) {
         var selectedLangIdx = 0
-        if let idx = langList.index(of: code) {
+        if let idx = langList.firstIndex(of: code) {
             selectedLangIdx = idx
         }
         dict = loadLanguage(index: selectedLangIdx)

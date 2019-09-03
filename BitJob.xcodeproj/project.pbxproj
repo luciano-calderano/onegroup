@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E8B8CC384B86620DFFD87BA /* Pods_OneGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77E32761E3665794E471A23 /* Pods_OneGroup.framework */; };
 		8B42DB472110952C00B6BC91 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B42DB462110952C00B6BC91 /* Default-568h@2x.png */; };
 		8B43D3A32111A69F0074C374 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43D3A22111A69F0074C374 /* User.swift */; };
 		8BE453D121108BC900441D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE453D021108BC900441D46 /* AppDelegate.swift */; };
@@ -25,10 +24,10 @@
 		8BFF80642111E85F00002957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFF805D2111E85F00002957 /* Main.storyboard */; };
 		8BFF80652111E85F00002957 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFF805F2111E85F00002957 /* MenuView.xib */; };
 		8BFF80662111E85F00002957 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF80602111E85F00002957 /* MenuView.swift */; };
+		CF9A009E216E83624D054794 /* Pods_BitJob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DAA52767E910DD6AF1396D /* Pods_BitJob.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		60DDE02E9E8622F387B2FD42 /* Pods_OneGroup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneGroup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B42DB462110952C00B6BC91 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8B43D3A22111A69F0074C374 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8BE453CD21108BC900441D46 /* BitJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,9 +47,10 @@
 		8BFF805D2111E85F00002957 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8BFF805F2111E85F00002957 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		8BFF80602111E85F00002957 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		96DAA52767E910DD6AF1396D /* Pods_BitJob.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitJob.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77E32761E3665794E471A23 /* Pods_OneGroup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneGroup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAB13E73A3ACCC0DC31136A3 /* Pods-OneGroup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneGroup.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneGroup/Pods-OneGroup.release.xcconfig"; sourceTree = "<group>"; };
-		E79C596713DA606220778F1D /* Pods-OneGroup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneGroup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneGroup/Pods-OneGroup.debug.xcconfig"; sourceTree = "<group>"; };
+		C7B763011AA280DD04831A45 /* Pods-BitJob.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitJob.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitJob/Pods-BitJob.release.xcconfig"; sourceTree = "<group>"; };
+		D35D8E27793959D53ED09366 /* Pods-BitJob.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitJob.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitJob/Pods-BitJob.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E8B8CC384B86620DFFD87BA /* Pods_OneGroup.framework in Frameworks */,
+				CF9A009E216E83624D054794 /* Pods_BitJob.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 		6D169BBB930D5D676D2BEF2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				60DDE02E9E8622F387B2FD42 /* Pods_OneGroup.framework */,
+				96DAA52767E910DD6AF1396D /* Pods_BitJob.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 		E41885E98F04535987A37254 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E79C596713DA606220778F1D /* Pods-OneGroup.debug.xcconfig */,
-				CAB13E73A3ACCC0DC31136A3 /* Pods-OneGroup.release.xcconfig */,
+				D35D8E27793959D53ED09366 /* Pods-BitJob.debug.xcconfig */,
+				C7B763011AA280DD04831A45 /* Pods-BitJob.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OneGroup-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BitJob-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -274,19 +274,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OneGroup/Pods-OneGroup-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/LcLib/LcLib.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitJob/Pods-BitJob-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LcLib.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitJob/Pods-BitJob-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneGroup/Pods-OneGroup-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BitJob/Pods-BitJob-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -438,7 +435,7 @@
 		};
 		8BE453E321108BCB00441D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E79C596713DA606220778F1D /* Pods-OneGroup.debug.xcconfig */;
+			baseConfigurationReference = D35D8E27793959D53ED09366 /* Pods-BitJob.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,7 +455,7 @@
 		};
 		8BE453E421108BCB00441D46 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAB13E73A3ACCC0DC31136A3 /* Pods-OneGroup.release.xcconfig */;
+			baseConfigurationReference = C7B763011AA280DD04831A45 /* Pods-BitJob.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

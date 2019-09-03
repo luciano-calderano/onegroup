@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (4.8.0)
-  - LcLib (1.1.1)
+  - Alamofire (4.8.2)
+  - LcLib (2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -16,13 +16,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LcLib:
-    :commit: b3d910c3a27caaa868249f1bf139277eafe26426
+    :commit: 699f05d64356e8b854b1eb6acd032d37c1bb38fd
     :git: https://github.com/luciano-calderano/LcLib.git
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  LcLib: 577a50dedafd9c466245831723c5e73ea2b0092f
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  LcLib: 8d58076759ce624191eb3460d4e61fb8e379c06d
 
-PODFILE CHECKSUM: 8e6934256f2974a8d8e542ab4b4c668e65c9147d
+PODFILE CHECKSUM: fdea63bdfc932743b36775cd2305c0d299de0050
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.5

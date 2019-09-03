@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE2F0D744513575AEF47A623ED5637CB"
-               BuildableName = "Pods_OneGroup.framework"
-               BlueprintName = "Pods-OneGroup"
+               BlueprintIdentifier = "72940907B37F0DC7FC0538D2E6DE6E1C"
+               BuildableName = "Pods_BitJob.framework"
+               BlueprintName = "Pods-BitJob"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE2F0D744513575AEF47A623ED5637CB"
-            BuildableName = "Pods_OneGroup.framework"
-            BlueprintName = "Pods-OneGroup"
+            BlueprintIdentifier = "72940907B37F0DC7FC0538D2E6DE6E1C"
+            BuildableName = "Pods_BitJob.framework"
+            BlueprintName = "Pods-BitJob"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
