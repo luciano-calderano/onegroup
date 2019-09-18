@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.8.2)
+  - Alamofire (4.9.0)
   - LcLib (2.0)
 
 DEPENDENCIES:
@@ -20,7 +20,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/luciano-calderano/LcLib.git
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   LcLib: 8d58076759ce624191eb3460d4e61fb8e379c06d
 
 PODFILE CHECKSUM: fdea63bdfc932743b36775cd2305c0d299de0050
